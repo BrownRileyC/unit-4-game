@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url(../images/FFX-background.png);
+    background-size: cover;
+
+}
+.container {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    clear:both;
+    text-align: center;    
+}
+
+.containerTop {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    clear:right;
+    text-align: center;
+}
+
+.spacer {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.col-1-1 {
+    width: 67%;
+    height: 16;
+    float: left;
+    background-color: green;
+}
+
+.col-1-2 {
+    width: 33%;
+    background-color: grey;
+    float: left;
+}
+
+.col-2a-1 {
+    width: 25%;
+    height: 16;
+    float: left;
+    background-color: orange;
+}
+
+.col-2a-2 {
+    width: 75%;
+    height: 16;
+    float: left;
+    background-color: yellow;
+}
+
+.col-2b-1, .col-2b-2, .col-2b-3, .col-2b-4{
+    width: 12.5%;
+    border:1px;
+    border-color:black;
+    border-style:solid;
+    height: 150px;
+    float: left;
+    background-color: white;
+}
+.characterImage {
+    height: 75%;
+    margin: 0 auto;
+    display: block;
+}
+
+.characterName, .characterHealth {
+    text-align: center;
+}
+
+.col-2b-5 {
+    width: 50%;
+    height: 100px;
+    float: left;
+    background-color: blue;
+}
