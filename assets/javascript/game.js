@@ -49,10 +49,8 @@ function createCharacterCard(num) {
     var characterDiv = $('<div>');
     characterDiv.addClass(characterArray[num].name);
     characterDiv.appendTo(".characterRow");
-    console.log("I ran after the div maker");
     var characterName = $('<h3>');
     characterName.appendTo(characterDiv);
-    console.log("I ran after appending");
     characterName.text(characterArray[num].name);
     var characterImage = $("<img class='characterImage' "+characterImageArray[num]);
     characterImage.appendTo(characterDiv);
@@ -63,6 +61,7 @@ function createCharacterCard(num) {
 }
 
 var resetGame = function() {
+    hero.attack = hero.power;
     hero;
     rival;
     heroSelected = false;
@@ -92,6 +91,7 @@ var fight = function(player,cpu) {
         victories++;
         rivalSelected = false;
         rivalAttack.text("");
+        cpu.health = cpu.startingHealth
         if (victories < 3){
         startingText.text("You are victorious, select your next rival");
         } else {
