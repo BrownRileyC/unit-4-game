@@ -27,7 +27,7 @@ var vivi = {
     counter: 5
 };
 
-var characterArray = ["Cloud", "Cid", "Kefka", "Vivi"];
+var characterArray = [cloud, cid, kefka, vivi];
 
 var heroSelected = false;
 
@@ -35,21 +35,22 @@ var characterImageArray = ["src='./assets/images/cloud.png'>", "src='./assets/im
 
 function createCharacterCard(num) {
     var characterDiv = $('<div>');
-    characterDiv.addClass(characterArray[num]);
+    characterDiv.addClass(characterArray[num].name);
     characterDiv.appendTo(".characterRow");
     console.log("I ran after the div maker");
     var characterName = $('<h3>');
     characterName.appendTo(characterDiv);
     console.log("I ran after appending");
-    characterName.text(characterArray[num]);
+    characterName.text(characterArray[num].name);
     var characterImage = $("<img class='characterImage' "+characterImageArray[num]);
     characterImage.appendTo(characterDiv);
     var characterHealth = $('<h3>');
     characterHealth.addClass(characterArray[num]+"Health");
     characterHealth.appendTo(characterDiv);
-    characterHealth.text("HP");
+    characterHealth.text(characterArray[num].health);
 }
 
+console.log("I'm cloud's health: "+cloud.health);
 
 
 $(document).ready(function() {
@@ -58,6 +59,10 @@ $(document).ready(function() {
         console.log(characterArray.length);
         createCharacterCard(i);
     }
+    // $('.CloudHealth').text(cloud.health);
+    // $('.CidHealth').text(cid.health);
+    // $('.KefkaHealth').text(kefka.health);
+    // $('.ViviHealth').text(vivi.health);
 
     $('.Cloud').click(function(){
         if (heroSelected === false) {

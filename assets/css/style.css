@@ -61,6 +61,7 @@ body {
     height: 150px;
     float: left;
     background-color: white;
+    text-align: center;
 }
 .characterImage {
     height: 75%;
