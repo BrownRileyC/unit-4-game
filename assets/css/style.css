@@ -94,6 +94,14 @@ body {
     background-color: white;
 }
 
+.combatFeed {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 33%;
+}
+
 .buttonText {
     margin: 6 22;
     padding-left: auto;
