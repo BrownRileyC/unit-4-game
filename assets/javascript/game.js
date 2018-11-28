@@ -1,33 +1,40 @@
+// Cloud loses all fights
 var cloud = {
     name: "Cloud",
     health: 240,
     startingHealth: 240,
-    attack: 7,
-    power: 7,
+    attack: 13,
+    power: 13,
     counter: 20
 };
+
+// cid wins 2/3 times
 var cid = {
     name: "Cid",
     health: 235,
     startingHealth: 235,
-    attack: 10,
-    power: 10,
+    attack: 12,
+    power: 12,
     counter: 25
 };
+
+// kefka loses all fights 
 var kefka = {
     name: "Kefka",
     health: 230,
     startingHealth: 230,
-    attack: 5,
-    power: 5,
-    counter: 35
+    attack: 10,
+    power: 10,
+    counter: 30
 };
+
+// Vivi wins if not kefka first 2/3 vivi wins
 var vivi = {
     name: "Vivi",
     health: 225,
     startingHealth: 225,
-    attack: 12,
-    power: 12,
+    attack: 15,
+    power: 15,
     counter: 15
 };
 
