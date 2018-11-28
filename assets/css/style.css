@@ -58,7 +58,7 @@ body {
     border:1px;
     border-color:black;
     border-style:solid;
-    height: 150px;
+    height: 125px;
     float: left;
     background-color: white;
     text-align: center;
@@ -67,10 +67,6 @@ body {
     height: 75%;
     margin: 0 auto;
     display: block;
-}
-
-.characterName, .characterHealth {
-    text-align: center;
 }
 
 .col-2b-5 {
@@ -86,6 +82,19 @@ body {
 
 .col-3a-1 {
     width: 75%;
-    height: 16;
-    
+    height: 16;   
+}
+
+.fightButton {
+    height: 32px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 95px;
+    background-color: white;
+}
+
+.buttonText {
+    margin: 6 22;
+    padding-left: auto;
 }
