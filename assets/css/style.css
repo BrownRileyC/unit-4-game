@@ -10,8 +10,7 @@ body {
     width: 100%;
     position: relative;
     display: inline-block;
-    clear:both;
-    text-align: center;    
+    clear:both;    
 }
 
 .containerTop {
@@ -54,7 +53,7 @@ body {
     background-color: yellow;
 }
 
-.col-2b-1, .col-2b-2, .col-2b-3, .col-2b-4{
+.Cloud, .Cid, .Kefka, .Vivi{
     width: 12.5%;
     border:1px;
     border-color:black;
@@ -78,4 +77,14 @@ body {
     height: 100px;
     float: left;
     background-color: blue;
+}
+.col-3a-1 {
+    width: 25%;
+    height: 16;
+}
+
+.col-3a-1 {
+    width: 75%;
+    height: 16;
+    
 }
