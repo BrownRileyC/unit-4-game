@@ -1,34 +1,34 @@
 var cloud = {
     name: "Cloud",
-    health: 175,
-    startingHealth: 175,
+    health: 240,
+    startingHealth: 240,
     attack: 7,
     power: 7,
-    counter: 15
+    counter: 20
 };
 var cid = {
     name: "Cid",
-    health: 15,
-    startingHealth: 15,
+    health: 235,
+    startingHealth: 235,
     attack: 10,
     power: 10,
     counter: 25
 };
 var kefka = {
     name: "Kefka",
-    health: 25,
-    startingHealth: 25,
+    health: 230,
+    startingHealth: 230,
     attack: 5,
     power: 5,
-    counter: 10
+    counter: 35
 };
 var vivi = {
     name: "Vivi",
-    health: 12,
-    startingHealth: 12,
+    health: 225,
+    startingHealth: 225,
     attack: 12,
     power: 12,
-    counter: 5
+    counter: 15
 };
 
 var characterArray = [cloud, cid, kefka, vivi];
@@ -62,13 +62,14 @@ function createCharacterCard(num) {
 
 var resetGame = function() {
     hero.attack = hero.power;
-    hero;
-    rival;
+    hero.health = hero.startingHealth;
     heroSelected = false;
     rivalSelected = false;
     victories = 0;
     $('.heroRow').empty();
     $('.rivalRow').empty();
+    $('.fighterRow').empty();
+    rivalAttack.text("");
     for (var i = 0; i < characterArray.length; i++) {
         createCharacterCard(i);
     }
@@ -81,7 +82,9 @@ var fight = function(player,cpu) {
     if (cpu.health > 0){
         player.health = player.health - cpu.counter;
         if (player.health < 1) {
-            startingText.text("You have been Defeated!")
+            cpu.health = cpu.startingHealth;
+            resetGame();
+            startingText.text("You have been Defeated! Try again if you dare")
         } else {
             rivalAttack.text(cpu.name + " dealt you a serious blow.  You took " + cpu.counter + " damage.")
             $('.'+player.name+'Health').text(player.health);
@@ -95,8 +98,8 @@ var fight = function(player,cpu) {
         if (victories < 3){
         startingText.text("You are victorious, select your next rival");
         } else {
-            startingText.text("Congratulations, you survived the Arena");
             resetGame();
+            startingText.text("Congratulations, you survived the Arena, try with a different character if you dare");
         }
     }
     
@@ -119,6 +122,7 @@ $(document).ready(function() {
         $('.Vivi').detach().appendTo('.rivalRow');
         heroSelected = true;
         hero = cloud;
+        console.log(hero);
         };
     }));
 
@@ -140,6 +144,7 @@ $(document).ready(function() {
         $('.Vivi').detach().appendTo('.rivalRow');
         heroSelected = true;
         hero = cid;
+        console.log(hero);
         };
     }));
 
@@ -161,7 +166,8 @@ $(document).ready(function() {
         $('.Kefka').detach().appendTo('.heroRow');
         $('.Vivi').detach().appendTo('.rivalRow');
         heroSelected = true;
-        hero = hero;
+        hero = kefka;
+        console.log(hero);
         };
     }));
 
@@ -181,9 +187,10 @@ $(document).ready(function() {
         $('.Cloud').detach().appendTo('.rivalRow');
         $('.Cid').detach().appendTo('.rivalRow');
         $('.Kefka').detach().appendTo('.rivalRow');
-        $('.Vivi').detach().appendTo('.ViviRow');
+        $('.Vivi').detach().appendTo('.heroRow');
         heroSelected = true;
         hero = vivi;
+        console.log(hero);
         };
     }));
 
