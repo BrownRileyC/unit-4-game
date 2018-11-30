@@ -71,3 +71,83 @@ var attack = function(x,y) {
     console.log("hero status " + x);
 };
 };
+
+
+
+
+
+
+
+
+
+var characterArray = ["Cloud", "Cid", "Kefka", "Vivi"];
+
+var heroSelected = false;
+var characterImageArray = ["src='./assets/images/cloud.png'>", "src='./assets/images/cid.png'>", "src='./assets/images/kefka.png'>", "src='./assets/images/Vivi.png'>"]
+
+function createCharacterCard(num) {
+    var characterDiv = $('<div>');
+    characterDiv.addClass(characterArray[num]);
+    characterDiv.appendTo(".characterRow");
+    console.log("I ran after the div maker");
+    var characterName = $('<h3>');
+    characterName.appendTo(characterDiv);
+    console.log("I ran after appending");
+    characterName.text(characterArray[num]);
+    var characterImage = $("<img class='characterImage' "+characterImageArray[num]);
+    characterImage.appendTo(characterDiv);
+    var characterHealth = $('<h3>');
+    characterHealth.addClass(characterArray[num]+"Health");
+    characterHealth.appendTo(characterDiv);
+    characterHealth.text("HP");
+}
+
+$(document).ready(function() {
+    
+    for (var i = 0; i < characterArray.length; i++) {
+        console.log(characterArray.length);
+        createCharacterCard(i);
+    }
+    console.log(heroSelected);
+
+    $('.Cloud').click(function(){
+        if (heroSelected = false) {
+        $('.Cloud').detach().appendTo('.heroRow');
+        $('.Cid').detach().appendTo('.rivalRow');
+        $('.Kefka').detach().appendTo('.rivalRow');
+        $('.Vivi').detach().appendTo('.rivalRow');
+        heroSelected = true;
+        };
+        console.log(heroSelected);
+    });
+
+    $('.Cid').click(function(){
+        if (heroSelected = false) {
+        $('.Cloud').detach().appendTo('.rivalRow');
+        $('.Cid').detach().appendTo('.HeroRow');
+        $('.Kefka').detach().appendTo('.rivalRow');
+        $('.Vivi').detach().appendTo('.rivalRow');
+        heroSelected = true;
+        };
+    });
+
+    $('.Kefka').click(function(){
+        if (heroSelected = false) {
+        $('.Cloud').detach().appendTo('.rivalRow');
+        $('.Cid').detach().appendTo('.rivalRow');
+        $('.Kefka').detach().appendTo('.heroRow');
+        $('.Vivi').detach().appendTo('.rivalRow');
+        heroSelected = true;
+        };
+    });
+    
+    $('.Vivi').click(function(){
+        if (heroSelected = false) {
+        $('.Cloud').detach().appendTo('.rivalRow');
+        $('.Cid').detach().appendTo('.rivalRow');
+        $('.Kefka').detach().appendTo('.rivalRow');
+        $('.Vivi').detach().appendTo('.heroRow');
+        heroSelected = true;
+        };
+    });
+});
