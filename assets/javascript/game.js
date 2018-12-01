@@ -1,4 +1,3 @@
-// Cloud loses all fights
 var cloud = {
     name: "Cloud",
     health: 252,
@@ -8,7 +7,6 @@ var cloud = {
     counter: 20
 };
 
-// cid wins 2/3 times
 var cid = {
     name: "Cid",
     health: 240,
@@ -18,7 +16,6 @@ var cid = {
     counter: 22
 };
 
-// kefka loses all fights 
 var kefka = {
     name: "Kefka",
     health: 210,
@@ -28,7 +25,6 @@ var kefka = {
     counter: 30
 };
 
-// Vivi wins if not kefka first 2/3 vivi wins
 var vivi = {
     name: "Vivi",
     health: 200,
@@ -65,7 +61,7 @@ function createCharacterCard(num) {
     characterHealth.addClass(characterArray[num].name+"Health");
     characterHealth.appendTo(characterDiv);
     characterHealth.text(characterArray[num].startingHealth);
-}
+};
 
 var resetGame = function() {
     hero.attack = hero.power;
@@ -80,7 +76,7 @@ var resetGame = function() {
     for (var i = 0; i < characterArray.length; i++) {
         createCharacterCard(i);
     }
-}
+};
 var fight = function(player,cpu) {
     cpu.health = cpu.health - player.attack;
     $('.'+cpu.name+'Health').text(cpu.health);
@@ -91,6 +87,7 @@ var fight = function(player,cpu) {
         if (player.health < 1) {
             cpu.health = cpu.startingHealth;
             resetGame();
+            resetGameTitles();
             startingText.text("You have been Defeated! Try again if you dare")
         } else {
             rivalAttack.text(cpu.name + " dealt you a serious blow.  You took " + cpu.counter + " damage.")
@@ -106,10 +103,25 @@ var fight = function(player,cpu) {
         startingText.text("You are victorious, select your next rival");
         } else {
             resetGame();
+            resetGameTitles();
             startingText.text("Congratulations, you survived the Arena, try with a different character if you dare");
         }
     }
-    
+};
+
+var gameStartTitleToggle = function() {
+    $('.selectRow').css({'display':"none"});
+    $('.gameStartTitles').css({'display':"inline-block"});
+};
+
+var enterArena = function() {
+    $('.rivalSelectText').css({'display':"inline-block"});
+};
+
+var resetGameTitles = function() {
+    $('.selectRow').css({'display':"inline-block"});
+    $('.gameStartTitles').css({'display':"none"});
+    $('.rivalSelectText').css({'display':"none"});
 }
 
 $(document).ready(function() {
@@ -123,20 +135,21 @@ $(document).ready(function() {
 
     $('.characterRow').on('click', '.Cloud',(function(){
         if (heroSelected === false) {
-        $('.Cloud').detach().appendTo('.heroRow');
-        $('.Cid').detach().appendTo('.rivalRow');
-        $('.Kefka').detach().appendTo('.rivalRow');
-        $('.Vivi').detach().appendTo('.rivalRow');
+        $('.Cloud').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
+        $('.Cid').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Kefka').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Vivi').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        gameStartTitleToggle();
         heroSelected = true;
         hero = cloud;
-        console.log(hero);
         };
     }));
 
     $('.rivalRow').on('click', '.Cloud', (function() {
         if (hero != cloud) {
             if (rivalSelected === false) {
-                $('.Cloud').detach().appendTo('.fighterRow');
+                $('.Cloud').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
+                enterArena();
                 rivalSelected = true;
                 rival = cloud;
             };
@@ -145,126 +158,72 @@ $(document).ready(function() {
 
     $('.characterRow').on('click', '.Cid',(function(){
         if (heroSelected === false) {
-        $('.Cloud').detach().appendTo('.rivalRow');
-        $('.Cid').detach().appendTo('.heroRow');
-        $('.Kefka').detach().appendTo('.rivalRow');
-        $('.Vivi').detach().appendTo('.rivalRow');
+        $('.Cloud').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Cid').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
+        $('.Kefka').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Vivi').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        gameStartTitleToggle();
         heroSelected = true;
         hero = cid;
-        console.log(hero);
         };
     }));
 
     $('.rivalRow').on('click', '.Cid', (function() {
         if (hero != cid) {
             if (rivalSelected === false) {
-                $('.Cid').detach().appendTo('.fighterRow');
+                $('.Cid').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
+                enterArena();
                 rivalSelected = true;
                 rival = cid;
             };
         };
     }));
 
-
     $('.characterRow').on('click', '.Kefka',(function(){
         if (heroSelected === false) {
-        $('.Cloud').detach().appendTo('.rivalRow');
-        $('.Cid').detach().appendTo('.rivalRow');
-        $('.Kefka').detach().appendTo('.heroRow');
-        $('.Vivi').detach().appendTo('.rivalRow');
+        $('.Cloud').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Cid').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Kefka').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
+        $('.Vivi').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        gameStartTitleToggle();
         heroSelected = true;
         hero = kefka;
-        console.log(hero);
         };
     }));
 
     $('.rivalRow').on('click', '.Kefka', (function() {
         if (hero != kefka) {
             if (rivalSelected === false) {
-                $('.Kefka').detach().appendTo('.fighterRow');
+                $('.Kefka').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
+                enterArena();
                 rivalSelected = true;
                 rival = kefka;
             };
         };
     }));
 
-
     $('.characterRow').on('click', '.Vivi',(function(){
         if (heroSelected === false) {
-        $('.Cloud').detach().appendTo('.rivalRow');
-        $('.Cid').detach().appendTo('.rivalRow');
-        $('.Kefka').detach().appendTo('.rivalRow');
-        $('.Vivi').detach().appendTo('.heroRow');
+        $('.Cloud').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Cid').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Kefka').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
+        $('.Vivi').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
+        gameStartTitleToggle();
         heroSelected = true;
         hero = vivi;
-        console.log(hero);
         };
     }));
 
     $('.rivalRow').on('click', '.Vivi', (function() {
         if (hero != vivi) {
             if (rivalSelected === false) {
-                $('.Vivi').detach().appendTo('.fighterRow');
+                $('.Vivi').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
+                enterArena();
                 rivalSelected = true;
                 rival = vivi;
             };
         };
     }));
-
-
-    // $('.Cid').click(function(){
-    //     if (heroSelected === false) {
-    //     $('.Cloud').detach().appendTo('.rivalRow');
-    //     $('.Cid').detach().appendTo('.HeroRow');
-    //     $('.Kefka').detach().appendTo('.rivalRow');
-    //     $('.Vivi').detach().appendTo('.rivalRow');
-    //     heroSelected = true;
-    //     hero = cid;
-    //     };
-    //     if (hero != cid) {
-    //         if (rivalSelected === false) {
-    //             $('.Cid').detach().appendTo('.fighterRow');
-    //             rivalSelected = true;
-    //             rival = cid;
-    //         };
-    //     };
-    // });
-
-    // $('.Kefka').click(function(){
-    //     if (heroSelected === false) {
-    //         $('.Cloud').detach().appendTo('.rivalRow');
-    //         $('.Cid').detach().appendTo('.rivalRow');
-    //         $('.Kefka').detach().appendTo('.heroRow');
-    //         $('.Vivi').detach().appendTo('.rivalRow');
-    //         heroSelected = true;
-    //         hero = kefka;
-    //     };
-    //     if (hero != kefka) {
-    //         if (rivalSelected === false) {
-    //             $('.Kefka').detach().appendTo('.fighterRow');
-    //             rivalSelected = true;
-    //             rival = kefka;
-    //         };
-    //     };
-    // });
-    
-    // $('.Vivi').click(function(){
-    //     if (heroSelected === false) {
-    //     $('.Cloud').detach().appendTo('.rivalRow');
-    //     $('.Cid').detach().appendTo('.rivalRow');
-    //     $('.Kefka').detach().appendTo('.rivalRow');
-    //     $('.Vivi').detach().appendTo('.heroRow');
-    //     heroSelected = true;
-    //     hero = vivi;
-    //     };
-    //     if (hero != vivi) {
-    //         if (rivalSelected === false) {
-    //             $('.Vivi').detach().appendTo('.fighterRow');
-    //             rivalSelected = true;
-    //             rival = vivi;
-    //         };
-    //     };
-    // });
 
     $('.fightButton').click(function(){
         if (rivalSelected === true) {

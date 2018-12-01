@@ -2,10 +2,37 @@
     box-sizing: border-box;
 }
 body {
-    background-image: url(../images/FFX-background.png);
+    background-image: url(../images/Purple\ Stars.jpg);
     background-size: cover;
-
+    color: whitesmoke;
 }
+
+.gameTitle {
+    font-size: 25px;
+    font-style: bold;
+}
+
+.wrapper-full {
+    width: 100%;
+    position: relative;
+    padding: 0 5%;
+}
+
+.wrapper-mid {
+    width: 100%;
+    position: relative;
+}
+
+.wrapper-game {
+    width: 50%;
+    position: relative;
+    float: left;
+}
+
+.side-image {
+    width: 50%; 
+}
+
 .container {
     width: 100%;
     position: relative;
@@ -30,37 +57,32 @@ body {
     width: 67%;
     height: 16;
     float: left;
-    background-color: green;
 }
 
 .col-1-2 {
     width: 33%;
-    background-color: grey;
     float: left;
 }
 
-.col-2a-1 {
+/* .col-2a-1 {
     width: 25%;
     height: 16;
     float: left;
-    background-color: orange;
 }
 
 .col-2a-2 {
     width: 75%;
     height: 16;
     float: left;
-    background-color: yellow;
-}
+} */
 
 .Cloud, .Cid, .Kefka, .Vivi{
-    width: 12.5%;
-    border:1px;
-    border-color:black;
-    border-style:solid;
-    height: 125px;
+    width: 20%;
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 2px;
+    height: 150px;
     float: left;
-    background-color: white;
     text-align: center;
 }
 .characterImage {
@@ -69,40 +91,38 @@ body {
     display: block;
 }
 
-.col-2b-5 {
-    width: 50%;
-    height: 100px;
-    float: left;
-    background-color: blue;
-}
 .col-3a-1 {
     width: 25%;
     height: 16;
 }
 
-.col-3a-1 {
-    width: 75%;
-    height: 16;   
-}
 
 .fightButton {
     height: 32px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 2px;
     width: 95px;
-    background-color: white;
+    background-color: #2f30da
 }
 
 .combatFeed {
-    background-color: whitesmoke;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    width: 33%;
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 2px;
+    width: 95%;
+    background-color: #2f30da
 }
 
 .buttonText {
     margin: 6 22;
     padding-left: auto;
+}
+
+.gameStartTitles {
+    display: none;
+}
+
+.rivalSelectText {
+    display: none;
 }

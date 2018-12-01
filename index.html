@@ -12,75 +12,82 @@
     <script src="./assets/javascript/game.js"></script>
 </head>
 <body>
-    <div class="containerTop spacer">
-        <!-- This is the title row -->
-        <div class="row">
-            <div class="col-1-1">
-            </div>
-            <div class="col-1-2">
-            <h1 class="gameTitle">Final Fantasy Arena</h1>
-            </div>
+    <div class="wrapper-full">  
 
-        </div>
-    </div>
-
-    <div class="container spacer">
-        <!-- This is the Character Selction Row -->
-        <div class="row spacer">
-            <div class="col-2a-1">
-                <h2 class="sectionTitle">Choose Your Hero!</h2>
-            </div>
-            <div class="col-2a-2">
-                    <!-- This is empty, I probably don't even need it except to manage the size of the section title -->
-            </div>
-        </div>
-                <!-- This is the subrow that holds the character portraits the second most complicated section -->
-        <div class="characterRow">
-        </div>
-    </div>
-    
-    <div class="container spacer">
-        <!-- This is the Hero Row -->
-        <div class="row">
-            <!-- This is the subrow that holds the section title -->
+        <div class="containerTop spacer">
+            <!-- This is the title row -->
             <div class="row">
-                <h3>Your Character</h3>
-            </div>
+                <div class="col-1-1">
+                </div>
+                <div class="col-1-2">
+                <h1 class="gameTitle">Final Fantasy Arena</h1>
+                </div>
 
-            <div class="heroRow">
+            </div>
+        </div>
+
+        <div class="wrapper-mid">
+            <div class="wrapper-game">
+                <div class="container spacer">
+                    <!-- This is the Character Selction Row -->
+                    <div class="selectRow spacer">
+                        <div class="col-2a-1">
+                            <h2 class="selectionTitle">Choose Your Hero!</h2>
+                        </div>
+                    </div>
+                            <!-- This is the subrow that holds the character portraits the second most complicated section -->
+                    <div class="characterRow">
+                    </div>
+                </div>
                 
+                <div class="container spacer">
+                    <!-- This is the Hero Row -->
+                    <div class="row">
+                        <!-- This is the subrow that holds the section title -->
+                        <div class="row">
+                            <h3 class="gameStartTitles">Your Character</h3>
+                        </div>
+
+                        <div class="heroRow">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container spacer">
+                    <!-- This is the Rival Zone -->
+                    <!-- This is the subrow that holds the section title -->
+                    <div class="row">
+                        <div class="col-3a-1">
+                            <h3 class="gameStartTitles">Rivals to Defeat</h3>
+                        </div>
+                        <div class="col-3a-2"></div>
+                    </div>
+
+                    <div class="rivalRow">
+                        
+                    </div>
+                </div>
+
+                <div class="container spacer">
+                    <!-- This is the Fight Section This will be the most complicated to lay out -->
+                    <div class="row">
+                        <h3 class="rivalSelectText">The Arena</h3>
+                    </div>
+
+                    <div class="fighterRow spacer"></div>
+                        <div>
+                            <div class="fightButton spacer rivalSelectText">
+                                <h2 class="buttonText">FIGHT</h2>
+                            </div>
+
+                            <div class="combatFeed"></div>
+                        </div>
+                </div>
             </div>
+            <img class="side-image" src="./assets/images/Balamb_Garden.jpg">
         </div>
     </div>
-    <div class="container spacer">
-        <!-- This is the Rival Zone -->
-        <!-- This is the subrow that holds the section title -->
-        <div class="row">
-            <div class="col-3a-1">
-                <h3>Rivals to Defeat</h3>
-            </div>
-            <div class="col-3a-2"></div>
-        </div>
 
-        <div class="rivalRow">
-            
-        </div>
-    </div>
-    <div class="container spacer">
-        <!-- This is the Fight Section This will be the most complicated to lay out -->
-        <div class="row">
-            <h3>The Arena</h3>
-        </div>
-        <div class="fighterRow spacer"></div>
-        <div>
-            <div class="fightButton spacer">
-                <h2 class="buttonText">FIGHT</h2>
-            </div>
-            <div class="combatFeed"></div>
-        </div>
-
-
-
-    </div>
 </body>
 </html>

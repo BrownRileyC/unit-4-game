@@ -151,3 +151,58 @@ $(document).ready(function() {
         };
     });
 });
+
+
+    // $('.Cid').click(function(){
+    //     if (heroSelected === false) {
+    //     $('.Cloud').detach().appendTo('.rivalRow');
+    //     $('.Cid').detach().appendTo('.HeroRow');
+    //     $('.Kefka').detach().appendTo('.rivalRow');
+    //     $('.Vivi').detach().appendTo('.rivalRow');
+    //     heroSelected = true;
+    //     hero = cid;
+    //     };
+    //     if (hero != cid) {
+    //         if (rivalSelected === false) {
+    //             $('.Cid').detach().appendTo('.fighterRow');
+    //             rivalSelected = true;
+    //             rival = cid;
+    //         };
+    //     };
+    // });
+
+    // $('.Kefka').click(function(){
+    //     if (heroSelected === false) {
+    //         $('.Cloud').detach().appendTo('.rivalRow');
+    //         $('.Cid').detach().appendTo('.rivalRow');
+    //         $('.Kefka').detach().appendTo('.heroRow');
+    //         $('.Vivi').detach().appendTo('.rivalRow');
+    //         heroSelected = true;
+    //         hero = kefka;
+    //     };
+    //     if (hero != kefka) {
+    //         if (rivalSelected === false) {
+    //             $('.Kefka').detach().appendTo('.fighterRow');
+    //             rivalSelected = true;
+    //             rival = kefka;
+    //         };
+    //     };
+    // });
+    
+    // $('.Vivi').click(function(){
+    //     if (heroSelected === false) {
+    //     $('.Cloud').detach().appendTo('.rivalRow');
+    //     $('.Cid').detach().appendTo('.rivalRow');
+    //     $('.Kefka').detach().appendTo('.rivalRow');
+    //     $('.Vivi').detach().appendTo('.heroRow');
+    //     heroSelected = true;
+    //     hero = vivi;
+    //     };
+    //     if (hero != vivi) {
+    //         if (rivalSelected === false) {
+    //             $('.Vivi').detach().appendTo('.fighterRow');
+    //             rivalSelected = true;
+    //             rival = vivi;
+    //         };
+    //     };
+    // });
