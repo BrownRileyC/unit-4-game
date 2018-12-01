@@ -104,7 +104,7 @@ var fight = function(player,cpu) {
         } else {
             resetGame();
             resetGameTitles();
-            startingText.text("Congratulations, you survived the Arena, try with a different character if you dare");
+            startingText.text("Congratulations, you survived the Arena, try with a different character if you dare.");
         }
     }
 };
@@ -112,16 +112,25 @@ var fight = function(player,cpu) {
 var gameStartTitleToggle = function() {
     $('.selectRow').css({'display':"none"});
     $('.gameStartTitles').css({'display':"inline-block"});
+    startingText.text("You've selected "+ hero.name + ". Now choose your first rival to fight");
 };
 
 var enterArena = function() {
     $('.rivalSelectText').css({'display':"inline-block"});
+    if (victories === 0) {
+        startingText.text("Now you're ready to battle.  Click the fight button to throw down with " + rival.name);
+    } else if (victories === 1) {
+        startingText.text("Click the fight button to duke it out with " + rival.name);
+    } else if (victories === 2) {
+        startingText.text("This is the final bout!  One more victory and you've won it all!  Good luck.");
+    }
 };
 
 var resetGameTitles = function() {
     $('.selectRow').css({'display':"inline-block"});
     $('.gameStartTitles').css({'display':"none"});
     $('.rivalSelectText').css({'display':"none"});
+    
 }
 
 $(document).ready(function() {
@@ -139,9 +148,9 @@ $(document).ready(function() {
         $('.Cid').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
         $('.Kefka').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
         $('.Vivi').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
-        gameStartTitleToggle();
         heroSelected = true;
         hero = cloud;
+        gameStartTitleToggle();
         };
     }));
 
@@ -149,9 +158,9 @@ $(document).ready(function() {
         if (hero != cloud) {
             if (rivalSelected === false) {
                 $('.Cloud').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
-                enterArena();
                 rivalSelected = true;
                 rival = cloud;
+                enterArena();
             };
         };
     }));
@@ -162,9 +171,9 @@ $(document).ready(function() {
         $('.Cid').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
         $('.Kefka').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
         $('.Vivi').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
-        gameStartTitleToggle();
         heroSelected = true;
         hero = cid;
+        gameStartTitleToggle();
         };
     }));
 
@@ -172,9 +181,9 @@ $(document).ready(function() {
         if (hero != cid) {
             if (rivalSelected === false) {
                 $('.Cid').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
-                enterArena();
                 rivalSelected = true;
                 rival = cid;
+                enterArena();
             };
         };
     }));
@@ -185,9 +194,9 @@ $(document).ready(function() {
         $('.Cid').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
         $('.Kefka').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
         $('.Vivi').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
-        gameStartTitleToggle();
         heroSelected = true;
         hero = kefka;
+        gameStartTitleToggle();
         };
     }));
 
@@ -195,9 +204,9 @@ $(document).ready(function() {
         if (hero != kefka) {
             if (rivalSelected === false) {
                 $('.Kefka').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
-                enterArena();
                 rivalSelected = true;
                 rival = kefka;
+                enterArena();
             };
         };
     }));
@@ -208,9 +217,9 @@ $(document).ready(function() {
         $('.Cid').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
         $('.Kefka').detach().appendTo('.rivalRow').css({"background-color": "rgba(65, 65, 65, 0.2"});
         $('.Vivi').detach().appendTo('.heroRow').css({"background-color": "rgba(0, 255, 0, 0.2"});
-        gameStartTitleToggle();
         heroSelected = true;
         hero = vivi;
+        gameStartTitleToggle();
         };
     }));
 
@@ -218,9 +227,9 @@ $(document).ready(function() {
         if (hero != vivi) {
             if (rivalSelected === false) {
                 $('.Vivi').detach().appendTo('.fighterRow').css({"background-color": "rgba(255, 0, 0, 0.2"});
-                enterArena();
                 rivalSelected = true;
                 rival = vivi;
+                enterArena();
             };
         };
     }));
